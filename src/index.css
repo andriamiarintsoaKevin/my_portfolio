@@ -18,45 +18,50 @@
     font-size: 16px;
   }
 
-  /* --- PALETTE PRO (Clair par défaut) --- */
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.20 0.02 260);
+  /* --- MODE CLAIR HAUT DE GAMME (Style SaaS Modern / Stripe) --- */
+  /* Fond : Blanc Ardoise très doux (pas de blanc pur aveuglant) */
+  --background: oklch(0.985 0.005 260); 
+  /* Texte principal : Noir ardoise élégant */
+  --foreground: oklch(0.20 0.03 260);
 
+  /* Cartes et Éléments de surface */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.20 0.02 260);
+  --card-foreground: oklch(0.20 0.03 260);
 
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.20 0.02 260);
+  --popover-foreground: oklch(0.20 0.03 260);
 
-  /* Primary: Bleu Indigo Pro */
-  --primary: oklch(0.55 0.20 265);
+  /* Couleur Primaire (Mode Clair) : Indigo / Bleu Roy Raffiné */
+  --primary: oklch(0.50 0.22 265);
   --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.96 0.01 260);
-  --secondary-foreground: oklch(0.30 0.02 260);
+  /* Arrière-plans secondaires & Badges */
+  --secondary: oklch(0.95 0.01 260);
+  --secondary-foreground: oklch(0.25 0.03 260);
 
-  --muted: oklch(0.96 0.01 260);
-  --muted-foreground: oklch(0.50 0.02 260);
+  --muted: oklch(0.95 0.01 260);
+  --muted-foreground: oklch(0.48 0.02 260);
 
-  --accent: oklch(0.94 0.03 265);
-  --accent-foreground: oklch(0.40 0.15 265);
+  --accent: oklch(0.93 0.02 265);
+  --accent-foreground: oklch(0.40 0.18 265);
 
   --destructive: oklch(0.577 0.245 27.325);
 
-  --border: oklch(0.92 0.01 260);
-  --input: oklch(0.92 0.01 260);
-  --ring: oklch(0.55 0.20 265);
+  /* Bordures très fines et élégantes */
+  --border: oklch(0.90 0.01 260);
+  --input: oklch(0.90 0.01 260);
+  --ring: oklch(0.50 0.22 265);
 
   --radius: 0.5rem;
 
-  --sidebar: oklch(0.98 0.005 260);
-  --sidebar-foreground: oklch(0.20 0.02 260);
-  --sidebar-primary: oklch(0.55 0.20 265);
+  --sidebar: oklch(0.97 0.005 260);
+  --sidebar-foreground: oklch(0.20 0.03 260);
+  --sidebar-primary: oklch(0.50 0.22 265);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.95 0.02 265);
-  --sidebar-accent-foreground: oklch(0.20 0.02 260);
-  --sidebar-border: oklch(0.92 0.01 260);
-  --sidebar-ring: oklch(0.55 0.20 265);
+  --sidebar-accent: oklch(0.93 0.02 265);
+  --sidebar-accent-foreground: oklch(0.20 0.03 260);
+  --sidebar-border: oklch(0.90 0.01 260);
+  --sidebar-ring: oklch(0.50 0.22 265);
 }
 
 @theme inline {
@@ -93,9 +98,8 @@
   --radius-lg: calc(var(--radius) * 1.25);
 }
 
-/* --- PALETTE PRO SOMBRE (Dark Mode Slate/Indigo) --- */
+/* --- MODE SOMBRE HAUT DE GAMME (Dark Slate Pro) --- */
 .dark {
-  /* Fond Sombre Profond Subtil (Noir / Bleuté Slate) */
   --background: oklch(0.14 0.015 260);
   --foreground: oklch(0.95 0.005 260);
 
@@ -105,7 +109,7 @@
   --popover: oklch(0.18 0.018 260);
   --popover-foreground: oklch(0.95 0.005 260);
 
-  /* Couleur d'Accentuation : Indigo Pro (remplace l'orange) */
+  /* Primary : Indigo Vibrant pour le Mode Sombre */
   --primary: oklch(0.62 0.21 265);
   --primary-foreground: oklch(0.99 0 0);
 
@@ -139,7 +143,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
   html {
     @apply font-mono;

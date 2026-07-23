@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FileDown, ArrowRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
+import { translations } from "../translations";
 
-export default function Hero() {
+export default function Hero({ lang = "fr" }) {
+  const t = translations[lang].hero;
+
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className="pt-32 pb-20 md:pt-40 md:pb-28 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center"
     >
       {/* Informations principales */}
@@ -17,66 +20,66 @@ export default function Hero() {
         className="md:col-span-7 flex flex-col gap-5"
       >
         <div className="flex items-center gap-3">
-          <span className="text-primary font-mono text-lg font-bold">
-            Hello, moi c'est Jensen
+          <span className="text-primary font-mono text-base md:text-lg font-semibold tracking-wide">
+            {t.greeting}
           </span>
-          <div className="w-12 h-0.5 bg-primary" />
+          <div className="w-12 h-0.5 bg-primary/80 rounded-full" />
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-extrabold text-foreground leading-tight">
-          Développeur Web <br />
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-foreground via-muted-foreground to-primary">
-            Full Stack
+        <h1 className="text-4xl md:text-6xl font-extrabold text-foreground leading-tight tracking-tight">
+          {t.role} <br />
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-foreground via-primary/90 to-primary">
+            {t.stack}
           </span>
         </h1>
 
-        <p className="text-muted-foreground text-lg leading-relaxed max-w-xl">
-          Je construis des applications web performantes, de la base de données à l'interface utilisateur.
+        <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl">
+          {t.pitch}
         </p>
 
-        {/* Liens vitaux (CTA) */}
+        {/* Liens d'action (CTA) */}
         <div className="flex flex-wrap items-center gap-4 pt-4">
           {/* Bouton Principal - Indigo */}
-          <Button 
-            asChild 
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 shadow-lg shadow-primary/20"
+          <Button
+            asChild
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 shadow-lg shadow-primary/25 transition-all hover:shadow-primary/40 hover:-translate-y-0.5"
           >
             <a href="#projects">
-              Voir mes projets <ArrowRight className="w-4 h-4" />
+              {t.viewProjects} <ArrowRight className="w-4 h-4" />
             </a>
           </Button>
 
           {/* Bouton Secondaire - Outline */}
-          <Button 
-            asChild 
-            variant="outline" 
-            size="lg" 
-            className="border-border bg-card/50 hover:bg-accent text-foreground gap-2"
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="border-border bg-card/60 hover:bg-accent hover:text-foreground text-foreground gap-2 transition-all hover:-translate-y-0.5"
           >
             <a href="/cv.pdf" download="CV_Jensen.pdf">
-              <FileDown className="w-4 h-4 text-primary" /> Télécharger CV
+              <FileDown className="w-4 h-4 text-primary" /> {t.downloadCv}
             </a>
           </Button>
 
-          {/* Social Links */}
+          {/* Liens Réseaux Sociaux */}
           <div className="flex items-center gap-2 ml-auto md:ml-2">
-            <Button 
-              asChild 
-              variant="ghost" 
-              size="icon" 
-              className="text-muted-foreground hover:text-foreground hover:bg-accent"
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              className="text-muted-foreground hover:text-foreground hover:bg-accent rounded-full"
             >
               <a href="https://github.com" target="_blank" rel="noreferrer" title="GitHub">
                 <GithubIcon className="w-5 h-5" />
               </a>
             </Button>
 
-            <Button 
-              asChild 
-              variant="ghost" 
-              size="icon" 
-              className="text-muted-foreground hover:text-foreground hover:bg-accent"
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              className="text-muted-foreground hover:text-foreground hover:bg-accent rounded-full"
             >
               <a href="https://linkedin.com" target="_blank" rel="noreferrer" title="LinkedIn">
                 <LinkedinIcon className="w-5 h-5" />
@@ -95,12 +98,13 @@ export default function Hero() {
       >
         {/* Halo animé autour de l'image */}
         <motion.div
-          animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.6, 0.3] }}
+          animate={{ scale: [1, 1.05, 1], opacity: [0.4, 0.7, 0.4] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute w-72 h-72 md:w-80 md:h-80 rounded-full border-2 border-primary/40 shadow-[0_0_80px_var(--color-primary)]"
+          className="absolute w-72 h-72 md:w-80 md:h-80 rounded-full border-2 border-primary/30 bg-primary/5 blur-xs shadow-2xl shadow-primary/30"
         />
 
-        <div className="relative z-10 w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-primary/60 bg-card">
+        {/* Container Image */}
+        <div className="relative z-10 w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-primary/50 bg-card shadow-xl">
           <img
             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600"
             alt="Jensen"
