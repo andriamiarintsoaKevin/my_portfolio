@@ -6,22 +6,33 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
+  /* 
+   * Responsive Fluid Typography:
+   * - Mobile (< 640px) : ~15px - 16px (évite les textes géants et le décalage de layout)
+   * - Tablette (640px - 1024px) : 16px - 17px
+   * - Desktop (> 1024px) : 18px
+   */
+  font-size: clamp(0.9375rem, 1.2vw + 0.75rem, 1.125rem);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* Fallback Media Queries si nécessaire pour des paliers stricts */
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+  
+  @media (max-width: 640px) {
+    font-size: 15px; /* Évite les débordements sur petit écran tout en gardant une excellente lisibilité */
+  }
 
   /* --- MODE CLAIR HAUT DE GAMME (Style SaaS Modern / Stripe) --- */
-  /* Fond : Blanc Ardoise très doux (pas de blanc pur aveuglant) */
   --background: oklch(0.985 0.005 260); 
-  /* Texte principal : Noir ardoise élégant */
   --foreground: oklch(0.20 0.03 260);
 
   /* Cartes et Éléments de surface */
@@ -31,7 +42,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.20 0.03 260);
 
-  /* Couleur Primaire (Mode Clair) : Indigo / Bleu Roy Raffiné */
+  /* Couleur Primaire */
   --primary: oklch(0.50 0.22 265);
   --primary-foreground: oklch(0.99 0 0);
 
@@ -47,7 +58,6 @@
 
   --destructive: oklch(0.577 0.245 27.325);
 
-  /* Bordures très fines et élégantes */
   --border: oklch(0.90 0.01 260);
   --input: oklch(0.90 0.01 260);
   --ring: oklch(0.50 0.22 265);

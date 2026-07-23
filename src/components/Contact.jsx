@@ -13,11 +13,14 @@ export default function Contact({ lang = "fr" }) {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Titre et description */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
-            {t.title}
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-base">
+        <div className="text-left mb-16">
+          <div className="flex items-center gap-2">
+            <span className="text-primary font-mono text-sm font-bold uppercase tracking-wider">
+              {t.title}
+            </span>
+            <div className="w-8 h-0.5 bg-primary/80 rounded-full" />
+          </div>
+          <p className="text-muted-foreground max-w-xl text-base">
             {t.subtitle}
           </p>
         </div>
@@ -42,10 +45,10 @@ export default function Contact({ lang = "fr" }) {
                 <div>
                   <p className="text-xs text-muted-foreground">{t.emailLabel}</p>
                   <a
-                    href="mailto:jensen.dev@example.com"
+                    href="mailto:Andriamiarintsoatsilavinakevin@gmail.com"
                     className="hover:text-primary transition-colors font-medium text-foreground"
                   >
-                    jensen.dev@example.com
+                    Andriamiarintsoatsilavinakevin@gmail.com
                   </a>
                 </div>
               </div>

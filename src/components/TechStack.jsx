@@ -1,85 +1,162 @@
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Monitor, Server, Database, Terminal } from "lucide-react";
+import { Monitor, Server, Database, Terminal, Smartphone } from "lucide-react";
 import { translations } from "../translations";
 
 export default function TechStack({ lang = "fr" }) {
-  const t = translations[lang].techStack;
+  const t = translations[lang]?.techStack || translations.fr.techStack;
 
-  // Données techniques de compétences fixes couplées avec les titres traduits
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const rawCategories = [
     {
       icon: Monitor,
-      skills: ["HTML", "CSS", "JavaScript", "ReactJS", "Tailwind CSS", "Sass", "Bootstrap"],
+      skills: [
+        { name: "HTML / CSS", level: "Avancé", percentage: 90 },
+        { name: "JavaScript", level: "Avancé", percentage: 85 },
+        { name: "ReactJS", level: "Avancé", percentage: 80 },
+        { name: "Tailwind CSS", level: "Avancé", percentage: 90 },
+        { name: "Sass / Bootstrap", level: "Intermédiaire", percentage: 75 },
+      ],
     },
     {
       icon: Server,
-      skills: ["PHP (Laravel)", "Python (Django)", "Java"],
+      skills: [
+        { name: "PHP (Laravel)", level: "Avancé", percentage: 90 },
+        { name: "Python (Django)", level: "Avancé", percentage: 85 },
+        { name: "Java", level: "Bases", percentage: 50 },
+      ],
+    },
+    {
+      icon: Smartphone,
+      skills: [
+        { name: "React Native", level: "Bases", percentage: 50 },
+        { name: "Flutter", level: "Bases", percentage: 50 },
+      ],
     },
     {
       icon: Database,
-      skills: ["MySQL", "PostgreSQL", "Supabase"],
+      skills: [
+        { name: "MySQL", level: "Avancé", percentage: 80 },
+        { name: "PostgreSQL", level: "Intermédiaire", percentage: 70 },
+        { name: "Supabase", level: "Intermédiaire", percentage: 65 },
+      ],
     },
     {
       icon: Terminal,
-      skills: ["Git", "GitHub", "Docker", "Vite", "VS Code"],
+      skills: [
+        { name: "Git / GitHub", level: "Avancé", percentage: 85 },
+        { name: "Docker", level: "Intermédiaire", percentage: 60 },
+        { name: "VS Code", level: "Avancé", percentage: 90 },
+        { name: "Cursor", level: "Avancé", percentage: 85 },
+      ],
     },
   ];
 
-  // Fusion des titres traduits et des icônes/compétences
   const categories = rawCategories.map((cat, index) => ({
     ...cat,
-    title: t.categories[index]?.title || "",
+    title: t.categories?.[index]?.title || "",
   }));
 
+  // Découpage en 3 blocs en haut et 2 blocs en bas
+  const topCategories = categories.slice(0, 3);
+  const bottomCategories = categories.slice(3, 5);
+
+  const renderCategoryCard = (cat, idx) => {
+    const Icon = cat.icon;
+    return (
+      <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 15 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+        transition={{ duration: 0.3, delay: idx * 0.08 }}
+        className="bg-card/70 border border-border/60 backdrop-blur-xs rounded-lg p-4 flex flex-col gap-3 shadow-xs hover:border-primary/40 transition-all duration-300"
+      >
+        {/* En-tête de Catégorie */}
+        <div className="flex items-center gap-2.5 border-b border-border/40 pb-2.5">
+          <div className="p-1.5 rounded-md bg-primary/10 text-primary shrink-0 border border-primary/20">
+            <Icon className="w-4 h-4" />
+          </div>
+          <h3 className="font-bold text-foreground text-sm">{cat.title}</h3>
+        </div>
+
+        {/* Liste des compétences */}
+        <div className="flex flex-col gap-2.5">
+          {cat.skills.map((skill, sIdx) => (
+            <div key={sIdx} className="flex flex-col gap-1">
+              {/* Nom + Badge Niveau */}
+              <div className="flex justify-between items-center text-xs">
+                <span className="font-medium text-foreground text-[11px] sm:text-xs">
+                  {skill.name}
+                </span>
+                <span className="font-mono text-[9px] px-1.5 py-0.2 rounded-full bg-primary/10 text-primary border border-primary/20 font-medium">
+                  {skill.level}
+                </span>
+              </div>
+
+              {/* Barre de progression fine */}
+              <div className="w-full h-1 bg-muted rounded-full overflow-hidden border border-border/30">
+                <motion.div
+                  className="h-full bg-linear-to-r from-primary/80 to-primary rounded-full"
+                  initial={{ width: 0 }}
+                  animate={{ width: isVisible ? `${skill.percentage}%` : 0 }}
+                  transition={{ duration: 0.6, delay: 0.05 + sIdx * 0.04, ease: "easeOut" }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    );
+  };
+
   return (
-    <section id="stack" className="py-20 bg-muted/30 border-y border-border/60 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Titre & Description */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
-            {t.title}
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-base">
+    <section
+      ref={sectionRef}
+      id="stack"
+      className="py-14 bg-muted/30 border-y border-border/60 transition-colors duration-300 overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-4">
+
+        {/* En-tête compact */}
+        <div className="text-left mb-6">
+          <div className="flex items-center gap-2">
+            <span className="text-primary font-mono text-sm font-bold uppercase tracking-wider">
+              {t.title}
+            </span>
+            <div className="w-8 h-0.5 bg-primary/80 rounded-full" />
+          </div>
+          <p className="text-muted-foreground max-w-xl text-xs sm:text-sm mt-1">
             {t.subtitle}
           </p>
         </div>
 
-        {/* Grille des compétences */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat, idx) => {
-            const Icon = cat.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-card/70 border border-border/60 backdrop-blur-xs rounded-xl p-6 flex flex-col gap-4 shadow-xs transition-all hover:border-primary/40 hover:shadow-md"
-              >
-                {/* Entête Catégorie */}
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-lg bg-primary/10 text-primary shrink-0">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="font-bold text-foreground text-lg">{cat.title}</h3>
-                </div>
-
-                {/* Badges des Skills */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {cat.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 rounded-md bg-secondary/80 border border-border/80 text-secondary-foreground text-xs font-medium hover:border-primary/60 hover:text-primary transition-all duration-200 cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* Ligne 1 : 3 blocs en haut */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {topCategories.map((cat, idx) => renderCategoryCard(cat, idx))}
         </div>
+
+        {/* Ligne 2 : 2 blocs en bas (centrés) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto w-full">
+          {bottomCategories.map((cat, idx) => renderCategoryCard(cat, idx + 3))}
+        </div>
+
       </div>
     </section>
   );
