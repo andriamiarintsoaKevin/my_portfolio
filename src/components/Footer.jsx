@@ -1,4 +1,4 @@
-import { Mail, MapPin, ArrowUpRight, Code2 } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { translations } from "@/translations";
 
@@ -56,7 +56,7 @@ export default function Footer({ lang = "fr" }) {
         },
         {
             name: "Email",
-            href: "mailto:votre.email@example.com",
+            href: "mailto:andriamiarintsoatsilavinakevin@gmail.com",
             icon: Mail,
         },
     ];
@@ -70,30 +70,34 @@ export default function Footer({ lang = "fr" }) {
     ];
 
     return (
-        <footer className="relative transition-colors border-t border-border/60 backdrop-blur-md pt-16 pb-8 duration-300">
+        <footer className="relative transition-colors border-t border-border/60 backdrop-blur-md pt-12 pb-6 duration-300">
             <div className="max-w-6xl mx-auto px-6">
                 {/* Grille principale du Footer */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-border/60">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-border/60">
 
                     {/* Section Branding / Presentation */}
-                    <div className="md:col-span-5 flex flex-col gap-4">
-                        <a href="#hero" className="flex items-center gap-2 text-xl font-bold text-foreground tracking-wide w-fit">
-                            <div className="p-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20">
-                                <Code2 className="w-5 h-5" />
+                    <div className="md:col-span-5 flex flex-col gap-3">
+                        <a href="#hero" className="flex items-center gap-2 text-base md:text-lg font-bold text-foreground tracking-wide w-fit">
+                            <div className="flex items-center justify-center p-0.5 text-primary transition-transform duration-300 group-hover:scale-105">
+                                <img
+                                    src="/img/logo.png"
+                                    alt="Logo Andriamiarintsoa"
+                                    className="w-4 h-4 sm:w-5 sm:h-5 md:w-9 md:h-9 object-contain bg-transparent"
+                                />
                             </div>
                             <span>
                                 Andriamiarintsoa<span className="text-primary font-mono">.dev</span>
                             </span>
                         </a>
-                        <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
+                        <p className="text-muted-foreground text-xs leading-relaxed max-w-sm">
                             {t.description}
                         </p>
 
                         {/* Localisation & Disponibilité */}
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground pt-1">
-                            <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
+                        <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground pt-0.5">
+                            <MapPin className="w-3 h-3 text-primary shrink-0" />
                             <span>Antananarivo, Madagascar</span>
-                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 ml-2 animate-pulse" />
+                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 ml-1.5 animate-pulse" />
                             <span className="text-emerald-500 font-medium">
                                 {t.available}
                             </span>
@@ -101,11 +105,11 @@ export default function Footer({ lang = "fr" }) {
                     </div>
 
                     {/* Liens Rapides */}
-                    <div className="md:col-span-3 flex flex-col gap-3">
-                        <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-foreground">
+                    <div className="md:col-span-3 flex flex-col gap-2.5">
+                        <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-foreground">
                             {t.navTitle}
                         </h4>
-                        <ul className="flex flex-col gap-2 text-sm">
+                        <ul className="flex flex-col gap-1.5 text-xs">
                             {quickLinks.map((link, idx) => (
                                 <li key={idx}>
                                     <a
@@ -120,8 +124,8 @@ export default function Footer({ lang = "fr" }) {
                     </div>
 
                     {/* Contacts & Réseaux Sociaux */}
-                    <div className="md:col-span-4 flex flex-col gap-4">
-                        <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-foreground">
+                    <div className="md:col-span-4 flex flex-col gap-3">
+                        <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-foreground">
                             {t.connectTitle}
                         </h4>
                         <p className="text-xs text-muted-foreground">
@@ -129,23 +133,24 @@ export default function Footer({ lang = "fr" }) {
                         </p>
 
                         {/* Boutons Réseaux Sociaux */}
-                        <div className="flex items-center gap-2 pt-1 flex-wrap">
+                        <div className="flex items-center gap-2 pt-0.5 flex-wrap">
                             {socialLinks.map((social, idx) => {
                                 const Icon = social.icon;
                                 return (
                                     <Button
                                         key={idx}
                                         variant="outline"
-                                        render={<a href={social.href} target="_blank" rel="noreferrer">
-                                            <Icon className="w-4 h-4 text-primary" />
-                                            <span className="text-xs font-medium"></span>
-                                            <ArrowUpRight className="w-3 h-3 text-muted-foreground group-hover:text-primary" />
-                                        </a>}
                                         size="sm"
-                                        className="border-border/80 bg-background/50 hover:bg-primary/10 hover:border-primary/40 text-foreground gap-2 transition-all rounded-xl"
+                                        className="h-7 px-2.5 border-border/80 bg-background/50 hover:bg-primary/10 hover:border-primary/40 text-foreground gap-1.5 transition-all rounded-lg text-[11px]"
+                                        render={
+                                            <a href={social.href} target="_blank" rel="noreferrer">
+                                                <Icon className="w-3.5 h-3.5 text-primary" />
+                                                <span>{social.name}</span>
+                                                <ArrowUpRight className="w-2.5 h-2.5 text-muted-foreground" />
+                                            </a>
+                                        }
                                     >
 
-                                        {social.name}
                                     </Button>
                                 );
                             })}
@@ -155,7 +160,7 @@ export default function Footer({ lang = "fr" }) {
                 </div>
 
                 {/* Bas de page / Copyright */}
-                <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+                <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-muted-foreground">
                     <p>
                         © {new Date().getFullYear()} Andriamiarintsoa. {t.rights}
                     </p>

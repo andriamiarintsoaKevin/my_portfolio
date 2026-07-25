@@ -1,12 +1,17 @@
+/* Réduction globale de la taille de base (équivalent à un zoom de ~80-85% pour forcer les éléments à être plus compacts à 100%) */
+html, body {
+  font-size: 8px; 
+}
+
 .counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
+  font-size: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
   color: var(--accent);
   background: var(--accent-bg);
   border: 2px solid transparent;
   transition: border-color 0.3s;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 
   &:hover {
     border-color: var(--accent-border);
@@ -28,7 +33,7 @@
   }
 
   .base {
-    width: 170px;
+    width: 140px; /* Légèrement réduit pour s'adapter aux cards plus petites */
     position: relative;
     z-index: 0;
   }
@@ -40,16 +45,16 @@
 
   .framework {
     z-index: 1;
-    top: 34px;
-    height: 28px;
+    top: 28px;
+    height: 23px;
     transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
       scale(1.4);
   }
 
   .vite {
     z-index: 0;
-    top: 107px;
-    height: 26px;
+    top: 88px;
+    height: 21px;
     width: auto;
     transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
       scale(0.8);
@@ -59,14 +64,14 @@
 #center {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   place-content: center;
   place-items: center;
   flex-grow: 1;
 
   @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
+    padding: 24px 16px 20px;
+    gap: 14px;
   }
 }
 
@@ -77,16 +82,16 @@
 
   & > div {
     flex: 1 1 0;
-    padding: 32px;
+    padding: 24px; /* Padding des cards réduit pour qu'elles paraissent plus compactes à 100% */
     @media (max-width: 1024px) {
-      padding: 24px 20px;
+      padding: 20px 16px;
     }
   }
 
   .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
+    margin-bottom: 12px;
+    width: 18px;
+    height: 18px;
   }
 
   @media (max-width: 1024px) {
@@ -108,22 +113,22 @@
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
+  gap: 6px;
+  margin: 24px 0 0;
 
   .logo {
-    height: 18px;
+    height: 14px;
   }
 
   a {
     color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
+    font-size: 8px;
+    border-radius: 5px;
     background: var(--social-bg);
     display: flex;
-    padding: 6px 12px;
+    padding: 5px 10px;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     text-decoration: none;
     transition: box-shadow 0.3s;
 
@@ -131,18 +136,18 @@
       box-shadow: var(--shadow);
     }
     .button-icon {
-      height: 18px;
-      width: 18px;
+      height: 14px;
+      width: 14px;
     }
   }
 
   @media (max-width: 1024px) {
-    margin-top: 20px;
+    margin-top: 16px;
     flex-wrap: wrap;
     justify-content: center;
 
     li {
-      flex: 1 1 calc(50% - 8px);
+      flex: 1 1 calc(50% - 6px);
     }
 
     a {
@@ -154,10 +159,10 @@
 }
 
 #spacer {
-  height: 88px;
+  height: 70px;
   border-top: 1px solid var(--border);
   @media (max-width: 1024px) {
-    height: 48px;
+    height: 40px;
   }
 }
 
@@ -169,8 +174,8 @@
   &::after {
     content: '';
     position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+    top: -4px;
+    border: 4px solid transparent;
   }
 
   &::before {
