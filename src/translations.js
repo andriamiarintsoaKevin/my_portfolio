@@ -85,6 +85,10 @@ export const translations = {
           title: "Gestion des rendez-vous médicaux",
           pitch: "Conception et développement d'une application web et mobile pour la gestion des rendez-vous médicaux.",
         },
+        {
+          title: "Portfolio personnel",
+          pitch: "Développement d'un portfolio personnel avec des langages modernes de programmation.",
+        },
       ],
     },
     techStack: {
@@ -114,7 +118,12 @@ export const translations = {
           period: "Présent",
           status: "in-progress",
           description: "Poursuite d'études supérieures en informatique, avec un approfondissement en ingénierie logicielle et architectures système.",
-          skills: ["Architecture logicielle", "Développement Web", "Gestion de projet"],
+          skills: [
+            "Architecture logicielle & Microservices",
+            "Sécurité logicielle & DevSecOps",
+            "Analyse de code & Refactoring avancé",
+            "Ingénierie des exigences & Architecture système"
+          ],
         },
         {
           degree: "Licence Professionnelle en Informatique",
@@ -123,7 +132,14 @@ export const translations = {
           period: "2023 - 2026",
           status: "completed",
           description: "Obtenue avec la mention Très Bien.",
-          skills: ["Architecture logicielle", "Développement Web", "Gestion de projet", "Modélisation"],
+          skills: [
+            "Développement web et mobile",
+            "Conception orientée objet & Design Patterns",
+            "Modélisation UML",
+            "Bases de données SQL",
+            "Gestion de projet",
+            "Initiation aux méthodes Agiles"
+          ],
         },
         {
           degree: "Baccalauréat Série D",
@@ -240,6 +256,10 @@ export const translations = {
           title: "Medical Appointment Management",
           pitch: "Design and development of a web and mobile application for managing medical appointments.",
         },
+        {
+          title: "Personal Portfolio",
+          pitch: "Development of a personal portfolio using modern programming languages.",
+        },
       ],
     },
     techStack: {
@@ -269,7 +289,12 @@ export const translations = {
           period: "Present",
           status: "in-progress",
           description: "Pursuing advanced studies in computer science, focusing on software engineering and system architecture.",
-          skills: ["Software Architecture", "Web Development", "Project Management"],
+          skills: [
+            "Software & Microservices Architecture",
+            "Software Security & DevSecOps",
+            "Code Analysis & Advanced Refactoring",
+            "Requirements Engineering & System Architecture"
+          ],
         },
         {
           degree: "Bachelor's Degree in Computer Science",
@@ -278,10 +303,17 @@ export const translations = {
           period: "2023 - 2026",
           status: "completed",
           description: "Graduated with High Honors.",
-          skills: ["Software Architecture", "Web Development", "Project Management", "Data Modeling"],
+          skills: [
+            "Web and Mobile Development",
+            "Object-Oriented Design & Design Patterns",
+            "UML Modeling",
+            "SQL Databases",
+            "Project Management",
+            "Introduction to Agile Methodologies"
+          ],
         },
         {
-          degree: "High School Diploma (Series D)",
+          degree: "High School Diploma",
           institution: "LMA (Lycée Moderne Ampefiloha)",
           location: "Antananarivo, Madagascar",
           period: "2021",

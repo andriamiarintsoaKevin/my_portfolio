@@ -23,7 +23,7 @@ export default function Projects({ lang = "fr" }) {
         "/img/prj1_4.png",
       ],
       stack: {
-        front: ["ReactJS", "Tailwind", "Vite", "InertiaJS"],
+        front: ["ReactJS", "TailwindCSS", "Vite", "InertiaJS"],
         back: ["Laravel"],
         db: ["MySQL"],
       },
@@ -70,9 +70,24 @@ export default function Projects({ lang = "fr" }) {
         "/img/prj4_2.png",
       ],
       stack: {
-        front: ["ReactJS", "Tailwind", "Flutter"],
+        front: ["ReactJS", "TailwindCSS", "Flutter"],
         back: ["Laravel"],
         db: ["SQLite"],
+      },
+      demoUrl: null,
+      githubUrl: "https://github.com",
+    },
+    {
+      type: "personal",
+      status: "completed",
+      images: [
+        "/img/portfolio_1.png",
+        "/img/portfolio_2.png",
+      ],
+      stack: {
+        front: ["ReactJS", "TailwindCSS", "Vite"],
+        back: [],
+        db: [],
       },
       demoUrl: null,
       githubUrl: "https://github.com",
