@@ -44,7 +44,7 @@ export default function Projects({ lang = "fr" }) {
         db: ["MySQL"],
       },
       demoUrl: null,
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/andriamiarintsoaKevin",
     },
     {
       type: "academic",
@@ -75,7 +75,7 @@ export default function Projects({ lang = "fr" }) {
         db: ["SQLite"],
       },
       demoUrl: null,
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/andriamiarintsoaKevin",
     },
     {
       type: "personal",
@@ -90,7 +90,7 @@ export default function Projects({ lang = "fr" }) {
         db: [],
       },
       demoUrl: null,
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/andriamiarintsoaKevin",
     },
   ];
 

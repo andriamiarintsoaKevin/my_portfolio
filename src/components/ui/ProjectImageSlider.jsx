@@ -4,7 +4,6 @@ import { useState } from "react";
 export default function ProjectImageSlider({ images, title }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Si aucune image
     if (!images || images.length === 0) {
         return (
             <div className="relative h-44 w-full bg-transparent rounded-t-xl flex items-center justify-center">
@@ -14,9 +13,8 @@ export default function ProjectImageSlider({ images, title }) {
     }
 
     return (
-        /* Suppression de 'border-b border-border/40' et du dégradé foncé */
         <div className="relative h-48 sm:h-52 w-full rounded-t-xl p-3 flex flex-col justify-between overflow-hidden group/slider bg-transparent">
-            
+
             {/* 1. Fausse barre de navigateur (Browser Mockup Header) */}
             <div className="flex items-center gap-1.5 mb-2 shrink-0 opacity-80 group-hover/slider:opacity-100 transition-opacity">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
@@ -27,13 +25,13 @@ export default function ProjectImageSlider({ images, title }) {
                 </span>
             </div>
 
-            {/* 2. Conteneur d'image (Suppression de 'border border-white/10') */}
+            {/* 2. Conteneur d'image */}
             <div className="relative flex-1 w-full overflow-hidden rounded-md shadow-md shadow-black/30 bg-transparent">
                 <AnimatePresence mode="wait">
                     <motion.img
                         key={currentIndex}
                         src={images[currentIndex]}
-                        alt={`${title} - image ${currentIndex + 1}`}
+                        alt={`${title} - image${currentIndex + 1}`}
                         initial={{ opacity: 0, scale: 0.98 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.98 }}
@@ -42,11 +40,9 @@ export default function ProjectImageSlider({ images, title }) {
                     />
                 </AnimatePresence>
 
-                {/* Léger masque sombre sur l'image qui disparaît au survol */}
                 <div className="absolute inset-0 bg-slate-950/10 group-hover/slider:bg-transparent transition-colors duration-300 pointer-events-none" />
             </div>
 
-            {/* 3. Navigation par Dots */}
             {images.length > 1 && (
                 <div className="relative z-20 flex justify-center items-center gap-1.5 pt-2">
                     {images.map((_, idx) => (
@@ -59,11 +55,10 @@ export default function ProjectImageSlider({ images, title }) {
                                 setCurrentIndex(idx);
                             }}
                             aria-label={`Voir image ${idx + 1}`}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${
-                                currentIndex === idx
-                                    ? "w-5 bg-primary shadow-xs shadow-primary/50"
-                                    : "w-1.5 bg-white/30 hover:bg-white/70"
-                            }`}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${currentIndex === idx
+                                ? "w-5 bg-primary shadow-xs shadow-primary/50"
+                                : "w-1.5 bg-foreground/20 hover:bg-foreground/50 dark:bg-white/30 dark:hover:bg-white/70"
+                                }`}
                         />
                     ))}
                 </div>

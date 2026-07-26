@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin } from "lucide-react";
 import { translations } from "../translations";
-import ContactForm from "./ContactForm"; // Import du nouveau composant
-
+import ContactForm from "./ContactForm";
 export default function Contact({ lang = "fr" }) {
   const t = translations[lang].contact;
 

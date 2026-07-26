@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FileDown, ArrowRight } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./Icons";
+import { GithubIcon } from "./Icons";
 import { translations } from "../translations";
 
 // Composant pour l'effet typewriter sans saut de ligne/layout shift
@@ -20,7 +20,7 @@ function DynamicRole({ roles }) {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 } // S'active dès que 10% du composant est visible
+      { threshold: 0.1 }
     );
 
     if (containerRef.current) {
@@ -134,7 +134,7 @@ export default function Hero({ lang = "fr" }) {
 
             <div className="flex items-center gap-1.5 ml-auto md:ml-1">
               <Button
-                render={<a href="https://github.com" target="_blank" rel="noreferrer" title="GitHub" />}
+                render={<a href="https://github.com/andriamiarintsoaKevin" target="_blank" rel="noreferrer" title="GitHub" />}
                 variant="ghost"
                 size="icon"
                 className="w-8 h-8 text-muted-foreground hover:text-foreground hover:bg-accent rounded-full"
@@ -142,14 +142,14 @@ export default function Hero({ lang = "fr" }) {
                 <GithubIcon className="w-4 h-4" />
               </Button>
 
-              <Button
+              {/* <Button
                 render={<a href="https://linkedin.com" target="_blank" rel="noreferrer" title="LinkedIn" />}
                 variant="ghost"
                 size="icon"
                 className="w-8 h-8 text-muted-foreground hover:text-foreground hover:bg-accent rounded-full"
               >
                 <LinkedinIcon className="w-4 h-4" />
-              </Button>
+              </Button> */}
             </div>
           </div>
         </motion.div>
