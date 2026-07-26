@@ -61,7 +61,7 @@ export default function TechStack({ lang = "fr" }) {
     {
       icon: Terminal,
       skills: [
-        { name: "Git / GitHub", level: "Avancé", percentage: 85 },
+        { name: "Git / GitHub", level: "Intermédiaire", percentage: 70 },
         { name: "Docker", level: "Intermédiaire", percentage: 60 },
         { name: "VS Code", level: "Avancé", percentage: 90 },
         { name: "Cursor", level: "Avancé", percentage: 85 },

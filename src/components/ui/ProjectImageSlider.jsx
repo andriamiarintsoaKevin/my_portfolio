@@ -1,61 +1,73 @@
-
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-// Composant de carrousel d'images avec navigation par dots uniquement
 export default function ProjectImageSlider({ images, title }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Si une seule image ou aucune, affichage standard sans dots
-    if (!images || images.length <= 1) {
+    // Si aucune image
+    if (!images || images.length === 0) {
         return (
-            <div className="relative h-48 overflow-hidden">
-                <img
-                    src={images?.[0] || ""}
-                    alt={title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors" />
+            <div className="relative h-44 w-full bg-transparent rounded-t-xl flex items-center justify-center">
+                <span className="text-xs text-muted-foreground">Aucune image</span>
             </div>
         );
     }
 
     return (
-        <div className="relative h-48 overflow-hidden group/slider">
-            {/* Slider avec animation Framer Motion */}
-            <AnimatePresence mode="wait">
-                <motion.img
-                    key={currentIndex}
-                    src={images[currentIndex]}
-                    alt={`${title} - image ${currentIndex + 1}`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full h-full object-cover"
-                />
-            </AnimatePresence>
-
-            <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors pointer-events-none" />
-
-            {/* Navigation par Dots uniquement (Centrés en bas) */}
-            <div className="absolute bottom-2.5 left-0 right-0 z-20 flex justify-center items-center gap-1.5 px-2">
-                {images.map((_, idx) => (
-                    <button
-                        key={idx}
-                        type="button"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setCurrentIndex(idx);
-                        }}
-                        aria-label={`Voir image ${idx + 1}`}
-                        className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx
-                            ? "w-6 bg-primary shadow-sm shadow-black/50"
-                            : "w-2 bg-white/60 hover:bg-white/90 backdrop-blur-xs"
-                            }`}
-                    />
-                ))}
+        /* Suppression de 'border-b border-border/40' et du dégradé foncé */
+        <div className="relative h-48 sm:h-52 w-full rounded-t-xl p-3 flex flex-col justify-between overflow-hidden group/slider bg-transparent">
+            
+            {/* 1. Fausse barre de navigateur (Browser Mockup Header) */}
+            <div className="flex items-center gap-1.5 mb-2 shrink-0 opacity-80 group-hover/slider:opacity-100 transition-opacity">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                <span className="text-[10px] text-muted-foreground/60 ml-2 font-mono truncate max-w-37.5">
+                    {title.toLowerCase().replace(/\s+/g, '')}.app
+                </span>
             </div>
+
+            {/* 2. Conteneur d'image (Suppression de 'border border-white/10') */}
+            <div className="relative flex-1 w-full overflow-hidden rounded-md shadow-md shadow-black/30 bg-transparent">
+                <AnimatePresence mode="wait">
+                    <motion.img
+                        key={currentIndex}
+                        src={images[currentIndex]}
+                        alt={`${title} - image ${currentIndex + 1}`}
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.98 }}
+                        transition={{ duration: 0.25 }}
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/slider:scale-105"
+                    />
+                </AnimatePresence>
+
+                {/* Léger masque sombre sur l'image qui disparaît au survol */}
+                <div className="absolute inset-0 bg-slate-950/10 group-hover/slider:bg-transparent transition-colors duration-300 pointer-events-none" />
+            </div>
+
+            {/* 3. Navigation par Dots */}
+            {images.length > 1 && (
+                <div className="relative z-20 flex justify-center items-center gap-1.5 pt-2">
+                    {images.map((_, idx) => (
+                        <button
+                            key={idx}
+                            type="button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                setCurrentIndex(idx);
+                            }}
+                            aria-label={`Voir image ${idx + 1}`}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                                currentIndex === idx
+                                    ? "w-5 bg-primary shadow-xs shadow-primary/50"
+                                    : "w-1.5 bg-white/30 hover:bg-white/70"
+                            }`}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

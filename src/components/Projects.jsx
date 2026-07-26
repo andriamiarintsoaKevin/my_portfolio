@@ -5,7 +5,7 @@ import { translations } from "../translations";
 import ProjectCard from "./ProjectCard";
 import LiveDemoModal from "./LiveDemoModal";
 
-const INITIAL_PROJECT_COUNT = 4; // 4 projets affichés par défaut
+const INITIAL_PROJECT_COUNT = 3; // 4 projets affichés par défaut
 
 export default function Projects({ lang = "fr" }) {
   const t = translations[lang].projects;
@@ -14,44 +14,16 @@ export default function Projects({ lang = "fr" }) {
 
   const rawProjects = [
     {
-      type: "academic",
-      status: "completed",
-      images: [
-        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      ],
-      stack: {
-        front: ["ReactJS", "Tailwind"],
-        back: ["Node.js", "Express"],
-        db: ["PostgreSQL"],
-      },
-      demoUrl: "https://demo.com",
-      githubUrl: "https://github.com",
-    },
-    {
-      type: "personal",
-      status: "in-progress",
-      images: [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-      ],
-      stack: {
-        front: ["Next.js", "Tailwind"],
-        back: ["FastAPI"],
-        db: ["Supabase"],
-      },
-      demoUrl: null,
-      githubUrl: "https://github.com",
-    },
-    {
       type: "internship",
       status: "completed",
       images: [
-        "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=800",
+        "/img/prj1_1.png",
+        "/img/prj1_2.png",
+        "/img/prj1_3.png",
+        "/img/prj1_4.png",
       ],
       stack: {
-        front: ["ReactJS", "Sass"],
+        front: ["ReactJS", "Tailwind", "Vite", "InertiaJS"],
         back: ["Laravel"],
         db: ["MySQL"],
       },
@@ -59,30 +31,48 @@ export default function Projects({ lang = "fr" }) {
       githubUrl: null,
     },
     {
-      type: "personal",
+      type: "academic",
       status: "completed",
       images: [
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
+        "/img/prj2_1.png",
+        "/img/prj2_2.png",
+        "/img/prj2_3.png",
       ],
       stack: {
-        front: ["Vue.js", "Tailwind"],
-        back: ["Node.js"],
-        db: ["MongoDB"],
+        front: ["Laravel Blade", "Bootstrap"],
+        back: ["Laravel"],
+        db: ["MySQL"],
       },
       demoUrl: null,
       githubUrl: "https://github.com",
     },
-    // Projets supplémentaires (visibles au clic sur "Voir plus")
     {
       type: "academic",
       status: "completed",
       images: [
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+        "/img/prj3_1.png",
+        "/img/prj3_2.png",
       ],
       stack: {
-        front: ["ReactJS"],
-        back: ["Django"],
+        front: ["XML"],
+        back: ["Python"],
         db: ["PostgreSQL"],
+      },
+      demoUrl: null,
+      githubUrl: null,
+    },
+    // Projets supplémentaires (visibles au clic sur "Voir plus")
+    {
+      type: "personal",
+      status: "in-progress",
+      images: [
+        "/img/prj4_1.png",
+        "/img/prj4_2.png",
+      ],
+      stack: {
+        front: ["ReactJS", "Tailwind", "Flutter"],
+        back: ["Laravel"],
+        db: ["SQLite"],
       },
       demoUrl: null,
       githubUrl: "https://github.com",
@@ -119,7 +109,7 @@ export default function Projects({ lang = "fr" }) {
         </div>
 
         {/* Grille sur 4 colonnes pour des cartes plus compactes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {visibleProjects.map((project, index) => (
             <ProjectCard
               key={index}

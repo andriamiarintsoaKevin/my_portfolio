@@ -57,6 +57,27 @@ export default function About({ lang = "fr" }) {
               </div>
             </div>
           )}
+
+          {/* Section Chiffres clés / Statistiques */}
+          {t.stats && (
+            <div className="pt-3 border-t border-border/60">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {t.stats.map((stat, idx) => (
+                  <div 
+                    key={idx} 
+                    className="p-3 rounded-lg bg-card/50 border border-border/60 text-center flex flex-col justify-center"
+                  >
+                    <span className="text-xl md:text-2xl font-extrabold text-primary font-mono">
+                      {stat.value}
+                    </span>
+                    <span className="text-[11px] text-muted-foreground mt-0.5 leading-tight">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </motion.div>
 
         {/* Atouts clés */}

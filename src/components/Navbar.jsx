@@ -135,7 +135,7 @@ export default function Navbar({ lang, setLang }) {
           {/* Langue Desktop */}
           <div className="flex items-center gap-0.5 bg-card/80 p-0.5 rounded-lg border border-border/60 text-[10px] font-semibold">
             <Globe className="w-2.5 h-2.5 text-muted-foreground ml-1 shrink-0" />
-            {["fr", "en", "mlg"].map((l) => (
+            {["fr", "en"].map((l) => (
               <button
                 key={l}
                 onClick={() => setLang(l)}
@@ -183,7 +183,6 @@ export default function Navbar({ lang, setLang }) {
           >
             <option value="fr">FR</option>
             <option value="en">EN</option>
-            <option value="mlg">MLG</option>
           </select>
 
           <Button
