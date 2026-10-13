@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-export default function ProjectImageSlider({ images, title }) {
+export default function ProjectImageSlider({ images, title, imageFit = "cover" }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     if (!images || images.length === 0) {
@@ -36,7 +36,10 @@ export default function ProjectImageSlider({ images, title }) {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.98 }}
                         transition={{ duration: 0.25 }}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/slider:scale-105"
+                        className={`w-full h-full ${imageFit === "contain"
+                            ? "object-contain"
+                            : "object-cover object-top transition-transform duration-500 group-hover/slider:scale-105"
+                            }`}
                     />
                 </AnimatePresence>
 

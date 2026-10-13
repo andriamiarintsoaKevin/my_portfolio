@@ -59,6 +59,7 @@ export default function Projects({ lang = "fr" }) {
       type: "personal",
       status: "in-progress",
       images: ["/img/prj4_1.png", "/img/prj4_2.png"],
+      imageFit: "contain",
       stack: {
         front: ["React Native"],
         back: ["FastAPI", "Python"],

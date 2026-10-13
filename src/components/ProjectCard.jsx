@@ -59,7 +59,11 @@ export default function ProjectCard({ project, index, lang, t, onOpenDemo }) {
 
         {/* Section Image & Badges d'état */}
         <div className="relative">
-          <ProjectImageSlider images={project.images} title={project.title} />
+          <ProjectImageSlider
+            images={project.images}
+            title={project.title}
+            imageFit={project.imageFit}
+          />
 
           {isInProgress && (
             <div className="absolute top-8.5 left-2.5 z-10 pointer-events-none">
