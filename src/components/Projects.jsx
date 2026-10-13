@@ -33,11 +33,7 @@ export default function Projects({ lang = "fr" }) {
     {
       type: "academic",
       status: "completed",
-      images: [
-        "/img/prj2_1.png",
-        "/img/prj2_2.png",
-        "/img/prj2_3.png",
-      ],
+      images: ["/img/prj2_1.png", "/img/prj2_2.png", "/img/prj2_3.png"],
       stack: {
         front: ["Laravel Blade", "Bootstrap"],
         back: ["Laravel"],
@@ -49,10 +45,7 @@ export default function Projects({ lang = "fr" }) {
     {
       type: "academic",
       status: "completed",
-      images: [
-        "/img/prj3_1.png",
-        "/img/prj3_2.png",
-      ],
+      images: ["/img/prj3_1.png", "/img/prj3_2.png"],
       stack: {
         front: ["XML"],
         back: ["Python"],
@@ -65,14 +58,11 @@ export default function Projects({ lang = "fr" }) {
     {
       type: "personal",
       status: "in-progress",
-      images: [
-        "/img/prj4_1.png",
-        "/img/prj4_2.png",
-      ],
+      images: ["/img/prj4_1.png", "/img/prj4_2.png"],
       stack: {
-        front: ["ReactJS", "TailwindCSS", "Flutter"],
-        back: ["Laravel"],
-        db: ["SQLite"],
+        front: ["React Native"],
+        back: ["FastAPI", "Python"],
+        db: ["PostgreSQL"],
       },
       demoUrl: null,
       githubUrl: "https://github.com/andriamiarintsoaKevin",
@@ -80,10 +70,7 @@ export default function Projects({ lang = "fr" }) {
     {
       type: "personal",
       status: "completed",
-      images: [
-        "/img/portfolio_1.png",
-        "/img/portfolio_2.png",
-      ],
+      images: ["/img/portfolio_1.png", "/img/portfolio_2.png"],
       stack: {
         front: ["ReactJS", "TailwindCSS", "Vite"],
         back: [],
@@ -104,12 +91,16 @@ export default function Projects({ lang = "fr" }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [t.items]);
 
-  const visibleProjects = showAll ? projectsList : projectsList.slice(0, INITIAL_PROJECT_COUNT);
+  const visibleProjects = showAll
+    ? projectsList
+    : projectsList.slice(0, INITIAL_PROJECT_COUNT);
 
   return (
-    <section id="projects" className="relative py-16 md:py-24 transition-colors duration-300 overflow-hidden">
+    <section
+      id="projects"
+      className="relative py-16 md:py-24 transition-colors duration-300 overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-
         {/* En-tête */}
         <div className="text-left mb-10">
           <div className="flex items-center gap-2.5">
@@ -148,9 +139,12 @@ export default function Projects({ lang = "fr" }) {
             >
               <span>
                 {showAll
-                  ? (lang === "fr" ? "Voir moins" : "Show less")
-                  : (lang === "fr" ? `Voir plus (${projectsList.length - INITIAL_PROJECT_COUNT})` : `Show more (${projectsList.length - INITIAL_PROJECT_COUNT})`)
-                }
+                  ? lang === "fr"
+                    ? "Voir moins"
+                    : "Show less"
+                  : lang === "fr"
+                    ? `Voir plus (${projectsList.length - INITIAL_PROJECT_COUNT})`
+                    : `Show more (${projectsList.length - INITIAL_PROJECT_COUNT})`}
               </span>
               {showAll ? (
                 <ChevronUp className="w-3.5 h-3.5 text-primary" />
@@ -160,7 +154,6 @@ export default function Projects({ lang = "fr" }) {
             </Button>
           </div>
         )}
-
       </div>
 
       {/* Modal Démo */}

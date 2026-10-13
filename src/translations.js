@@ -13,7 +13,8 @@ export const translations = {
       greeting: "Bonjour, je suis Kevin",
       role: "Développeur",
       stack: "Full Stack",
-      pitch: "Je conçois des applications web et mobiles performantes et sur mesure. De l'architecture des bases de données jusqu'à l'expérience utilisateur, je donne vie à vos idées.",
+      pitch:
+        "Je conçois des applications web et mobiles performantes et sur mesure. De l'architecture des bases de données jusqu'à l'expérience utilisateur, je donne vie à vos idées.",
       btnProjects: "Découvrir mes projets",
       btnCv: "Télécharger mon CV",
       roles: [
@@ -26,12 +27,23 @@ export const translations = {
     about: {
       badge: "Culture & Profil",
       title: "À propos de moi",
-      paragraph1: "Titulaire d'une Licence en Informatique et passionné par le développement web et mobile, j'aime résoudre des problèmes complexes et mettre le numérique au service de projets à fort impact.",
-      paragraph2: "Pour moi, le développement va bien au-delà du code. Il s'agit d'abord de comprendre les besoins réels, de communiquer de manière fluide avec l'équipe et d'architecturer des solutions pérennes, véritablement pensées pour l'utilisateur final.",
+      paragraph1:
+        "Titulaire d'une Licence en Informatique et passionné par le développement web et mobile, j'aime résoudre des problèmes complexes et mettre le numérique au service de projets à fort impact.",
+      paragraph2:
+        "Pour moi, le développement va bien au-delà du code. Il s'agit d'abord de comprendre les besoins réels, de communiquer de manière fluide avec l'équipe et d'architecturer des solutions pérennes, véritablement pensées pour l'utilisateur final.",
       highlights: [
-        { title: "Autonomie & Rigueur", desc: "Je pilote les projets de A à Z, depuis la conception architecturale jusqu'au déploiement en production." },
-        { title: "Esprit d'Équipe", desc: "Je privilégie une communication fluide et une collaboration transparente au sein d'équipes pluridisciplinaires." },
-        { title: "Veille Technologique", desc: "J'explore constamment de nouveaux outils pour intégrer les meilleures pratiques du marché à mon travail." },
+        {
+          title: "Autonomie & Rigueur",
+          desc: "Je pilote les projets de A à Z, depuis la conception architecturale jusqu'au déploiement en production.",
+        },
+        {
+          title: "Esprit d'Équipe",
+          desc: "Je privilégie une communication fluide et une collaboration transparente au sein d'équipes pluridisciplinaires.",
+        },
+        {
+          title: "Veille Technologique",
+          desc: "J'explore constamment de nouveaux outils pour intégrer les meilleures pratiques du marché à mon travail.",
+        },
       ],
       languagesTitle: "Compétences Linguistiques",
       JeParle: "Langues parlées",
@@ -48,19 +60,22 @@ export const translations = {
     },
     contact: {
       title: "Prenons Contact",
-      subtitle: "Vous avez un projet ambitieux, une idée de collaboration ou une opportunité professionnelle ? Discutons-en !",
+      subtitle:
+        "Vous avez un projet ambitieux, une idée de collaboration ou une opportunité professionnelle ? Discutons-en !",
       coordinatesTitle: "Coordonnées",
       emailLabel: "Email professionnel",
       locationLabel: "Localisation",
       locationValue: "Antananarivo, Madagascar",
       namePlaceholder: "Votre nom complet",
       emailPlaceholder: "Votre adresse email",
-      messagePlaceholder: "Parlez-moi un peu de votre projet ou de votre demande...",
+      messagePlaceholder:
+        "Parlez-moi un peu de votre projet ou de votre demande...",
       sendBtn: "Envoyer le message",
     },
     projects: {
       title: "Projets Récents",
-      subtitle: "Voici une sélection de mes réalisations professionnelles et académiques, illustrant mon savoir-faire technique.",
+      subtitle:
+        "Voici une sélection de mes réalisations professionnelles et académiques, illustrant mon savoir-faire technique.",
       labels: {
         front: "Frontend",
         back: "Backend",
@@ -71,29 +86,35 @@ export const translations = {
       items: [
         {
           title: "Application de Recensement",
-          pitch: "Conception et développement d'une application web pour le MTEFoP intégrée avec un assistant IA via l'API Gemini.",
+          pitch:
+            "Conception et développement d'une application web pour le MTEFoP intégrée avec un assistant IA via l'API Gemini.",
         },
         {
           title: "Gestion des Bulletins de Notes",
-          pitch: "Projet académique axé sur la mise en place d'un système complet de gestion des notes scolaires des étudiants.",
+          pitch:
+            "Projet académique axé sur la mise en place d'un système complet de gestion des notes scolaires des étudiants.",
         },
         {
           title: "Personnalisation Module Odoo",
-          pitch: "Adaptation sur mesure du module Employés sous Odoo réalisée dans le cadre de mon parcours académique.",
+          pitch:
+            "Adaptation sur mesure du module Employés sous Odoo réalisée dans le cadre de mon parcours académique.",
         },
         {
-          title: "Gestion des rendez-vous médicaux",
-          pitch: "Conception et développement d'une application web et mobile pour la gestion des rendez-vous médicaux.",
+          title: "Gestion des stocks",
+          pitch:
+            "Conception et développement d'une application mobile pour la gestion des stocks.",
         },
         {
           title: "Portfolio personnel",
-          pitch: "Développement d'un portfolio personnel avec des langages modernes de programmation.",
+          pitch:
+            "Développement d'un portfolio personnel avec des langages modernes de programmation.",
         },
       ],
     },
     techStack: {
       title: "Stack Technique",
-      subtitle: "Les technologies, langages et outils que j'exploite au quotidien pour bâtir des solutions fiables.",
+      subtitle:
+        "Les technologies, langages et outils que j'exploite au quotidien pour bâtir des solutions fiables.",
       categories: [
         { title: "Front-End" },
         { title: "Back-End" },
@@ -104,7 +125,8 @@ export const translations = {
     },
     academic: {
       title: "Formation & Diplômes",
-      subtitle: "Un aperçu de mon parcours académique et des compétences clés développées.",
+      subtitle:
+        "Un aperçu de mon parcours académique et des compétences clés développées.",
       labels: {
         inProgress: "En cours",
         completed: "Obtenu",
@@ -117,12 +139,13 @@ export const translations = {
           location: "Ampasamadinika, Antananarivo",
           period: "Présent",
           status: "in-progress",
-          description: "Poursuite d'études supérieures en informatique, avec un approfondissement en ingénierie logicielle et architectures système.",
+          description:
+            "Poursuite d'études supérieures en informatique, avec un approfondissement en ingénierie logicielle et architectures système.",
           skills: [
             "Architecture logicielle & Microservices",
             "Sécurité logicielle & DevSecOps",
             "Analyse de code & Refactoring avancé",
-            "Ingénierie des exigences & Architecture système"
+            "Ingénierie des exigences & Architecture système",
           ],
         },
         {
@@ -138,7 +161,7 @@ export const translations = {
             "Modélisation UML",
             "Bases de données SQL",
             "Gestion de projet",
-            "Initiation aux méthodes Agiles"
+            "Initiation aux méthodes Agiles",
           ],
         },
         {
@@ -153,11 +176,13 @@ export const translations = {
       ],
     },
     footer: {
-      description: "Développeur Full Stack passionné, dédié à la création d'expériences digitales modernes, rapides et intuitives.",
+      description:
+        "Développeur Full Stack passionné, dédié à la création d'expériences digitales modernes, rapides et intuitives.",
       available: "Ouvert à de nouvelles opportunités",
       navTitle: "Navigation rapide",
       connectTitle: "Restons en contact",
-      connectText: "Vous souhaitez concrétiser une idée ou renforcer votre équipe ? N'hésitez pas à me contacter.",
+      connectText:
+        "Vous souhaitez concrétiser une idée ou renforcer votre équipe ? N'hésitez pas à me contacter.",
       rights: "Tous droits réservés.",
       builtWith: "Conçu avec",
       nav: {
@@ -184,7 +209,8 @@ export const translations = {
       greeting: "Hi, I'm Kevin",
       role: "Full Stack",
       stack: "Developer",
-      pitch: "I design and build tailored, high-performance web and mobile applications. From database architecture to smooth user experiences, I bring your ideas to life.",
+      pitch:
+        "I design and build tailored, high-performance web and mobile applications. From database architecture to smooth user experiences, I bring your ideas to life.",
       btnProjects: "Explore my work",
       btnCv: "Download CV",
       roles: [
@@ -197,12 +223,23 @@ export const translations = {
     about: {
       badge: "Culture & Mindset",
       title: "About Me",
-      paragraph1: "Holding a Bachelor's Degree in Computer Science with a focus on web and mobile development, I enjoy solving complex challenges and building tech solutions that make a real difference.",
-      paragraph2: "To me, software development is about much more than writing code. It starts with truly understanding real needs, communicating smoothly with the team, and engineering sustainable solutions designed for the end user.",
+      paragraph1:
+        "Holding a Bachelor's Degree in Computer Science with a focus on web and mobile development, I enjoy solving complex challenges and building tech solutions that make a real difference.",
+      paragraph2:
+        "To me, software development is about much more than writing code. It starts with truly understanding real needs, communicating smoothly with the team, and engineering sustainable solutions designed for the end user.",
       highlights: [
-        { title: "Ownership & Rigor", desc: "I manage projects end-to-end, from architectural concepts to production deployment." },
-        { title: "Team Player", desc: "I value clear communication and transparent collaboration within cross-functional teams." },
-        { title: "Continuous Learning", desc: "I regularly explore new tools to bring modern industry standards into my workflow." },
+        {
+          title: "Ownership & Rigor",
+          desc: "I manage projects end-to-end, from architectural concepts to production deployment.",
+        },
+        {
+          title: "Team Player",
+          desc: "I value clear communication and transparent collaboration within cross-functional teams.",
+        },
+        {
+          title: "Continuous Learning",
+          desc: "I regularly explore new tools to bring modern industry standards into my workflow.",
+        },
       ],
       languagesTitle: "Language Skills",
       JeParle: "Languages Spoken",
@@ -219,7 +256,8 @@ export const translations = {
     },
     contact: {
       title: "Let's Connect",
-      subtitle: "Have an ambitious project, a partnership idea, or a professional opportunity? Let's talk!",
+      subtitle:
+        "Have an ambitious project, a partnership idea, or a professional opportunity? Let's talk!",
       coordinatesTitle: "Contact Details",
       emailLabel: "Professional Email",
       locationLabel: "Location",
@@ -231,7 +269,8 @@ export const translations = {
     },
     projects: {
       title: "Featured Projects",
-      subtitle: "A selection of my professional and academic work, highlighting my technical experience.",
+      subtitle:
+        "A selection of my professional and academic work, highlighting my technical experience.",
       labels: {
         front: "Frontend",
         back: "Backend",
@@ -242,29 +281,35 @@ export const translations = {
       items: [
         {
           title: "Census Web Application",
-          pitch: "Design and development of a census web application for MTEFoP featuring an AI assistant powered by the Gemini API.",
+          pitch:
+            "Design and development of a census web application for MTEFoP featuring an AI assistant powered by the Gemini API.",
         },
         {
           title: "Grade Report System",
-          pitch: "Academic project focused on implementing a full school report card management system for students.",
+          pitch:
+            "Academic project focused on implementing a full school report card management system for students.",
         },
         {
           title: "Odoo Module Customization",
-          pitch: "Custom tailoring of the Employee module in Odoo created as part of my academic coursework.",
+          pitch:
+            "Custom tailoring of the Employee module in Odoo created as part of my academic coursework.",
         },
         {
-          title: "Medical Appointment Management",
-          pitch: "Design and development of a web and mobile application for managing medical appointments.",
+          title: "Inventory Management",
+          pitch:
+            "Design and development of a mobile application for inventory management.",
         },
         {
           title: "Personal Portfolio",
-          pitch: "Development of a personal portfolio using modern programming languages.",
+          pitch:
+            "Development of a personal portfolio using modern programming languages.",
         },
       ],
     },
     techStack: {
       title: "Tech Stack",
-      subtitle: "Technologies, languages, and tools I use daily to build reliable digital products.",
+      subtitle:
+        "Technologies, languages, and tools I use daily to build reliable digital products.",
       categories: [
         { title: "Front-End" },
         { title: "Back-End" },
@@ -288,12 +333,13 @@ export const translations = {
           location: "Ampasamadinika, Antananarivo",
           period: "Present",
           status: "in-progress",
-          description: "Pursuing advanced studies in computer science, focusing on software engineering and system architecture.",
+          description:
+            "Pursuing advanced studies in computer science, focusing on software engineering and system architecture.",
           skills: [
             "Software & Microservices Architecture",
             "Software Security & DevSecOps",
             "Code Analysis & Advanced Refactoring",
-            "Requirements Engineering & System Architecture"
+            "Requirements Engineering & System Architecture",
           ],
         },
         {
@@ -309,7 +355,7 @@ export const translations = {
             "UML Modeling",
             "SQL Databases",
             "Project Management",
-            "Introduction to Agile Methodologies"
+            "Introduction to Agile Methodologies",
           ],
         },
         {
@@ -324,11 +370,13 @@ export const translations = {
       ],
     },
     footer: {
-      description: "Passionate Full Stack Developer creating modern, fast, and user-friendly digital experiences.",
+      description:
+        "Passionate Full Stack Developer creating modern, fast, and user-friendly digital experiences.",
       available: "Open to new opportunities",
       navTitle: "Quick Links",
       connectTitle: "Let's stay in touch",
-      connectText: "Looking to build a project or strengthen your dev team? Feel free to write to me.",
+      connectText:
+        "Looking to build a project or strengthen your dev team? Feel free to write to me.",
       rights: "All rights reserved.",
       builtWith: "Built with",
       nav: {
@@ -355,7 +403,8 @@ export const translations = {
       greeting: "Miarahaba, Kevin aho",
       role: "Mpamolavola",
       stack: "Full Stack",
-      pitch: "Mamorona fampiharana web sy finday maoderina ary araka ny ilainao aho. Miainga amin'ny firafitry ny angon-drakitra ka hatramin'ny traikefan'ny mpampiasa, mampita aina ny hevitrao aho.",
+      pitch:
+        "Mamorona fampiharana web sy finday maoderina ary araka ny ilainao aho. Miainga amin'ny firafitry ny angon-drakitra ka hatramin'ny traikefan'ny mpampiasa, mampita aina ny hevitrao aho.",
       btnProjects: "Hijery ireo asako",
       btnCv: "Haka ny CV-ko",
       roles: [
@@ -368,12 +417,23 @@ export const translations = {
     about: {
       badge: "Kolontsaina & Mombamomba",
       title: "Momba ahy",
-      paragraph1: "Manana Licence amin'ny Informatika ary liana amin'ny famolavolana tranonkala sy finday aho. Tia mamaha olana sarotra ary vonona hampiasa ny fahaizako nomerika ho an'ny tetikasa manana fiantraikany tsara.",
-      paragraph2: "Amiko, ny fampandrosoana rindrambaiko dia mihoatra lavitra noho ny fanoratana kaody. Izany dia mikasika indrindra ny fahatakarana ny filàn'ny mpanjifa, ny fifandraisana mazava amin'ny ekipa, ary ny famoronana vahaolana maharitra namboarina ho an'ny mpampiasa farany.",
+      paragraph1:
+        "Manana Licence amin'ny Informatika ary liana amin'ny famolavolana tranonkala sy finday aho. Tia mamaha olana sarotra ary vonona hampiasa ny fahaizako nomerika ho an'ny tetikasa manana fiantraikany tsara.",
+      paragraph2:
+        "Amiko, ny fampandrosoana rindrambaiko dia mihoatra lavitra noho ny fanoratana kaody. Izany dia mikasika indrindra ny fahatakarana ny filàn'ny mpanjifa, ny fifandraisana mazava amin'ny ekipa, ary ny famoronana vahaolana maharitra namboarina ho an'ny mpampiasa farany.",
       highlights: [
-        { title: "Mahaleotena & Marim-pototra", desc: "Mitarika ny tetikasa A hatramin'ny Z aho, manomboka amin'ny famolavolana ka hatramin'ny fametrahana azy amin'ny fampiasana mivantana." },
-        { title: "Fanahin'ny Ekipa", desc: "Asehoko amin'ny fifandraisana mazava sy fiaraha-miasa mangarahara izany eo anivon'ny ekipa samihafa taranja." },
-        { title: "Fiahiana ara-teknolojia", desc: "Mikaroka fitaovana vaovao hatrany aho mba hampidirana ireo fomba fiasa tsara indrindra eo amin'ny tsena amin'ny asako." },
+        {
+          title: "Mahaleotena & Marim-pototra",
+          desc: "Mitarika ny tetikasa A hatramin'ny Z aho, manomboka amin'ny famolavolana ka hatramin'ny fametrahana azy amin'ny fampiasana mivantana.",
+        },
+        {
+          title: "Fanahin'ny Ekipa",
+          desc: "Asehoko amin'ny fifandraisana mazava sy fiaraha-miasa mangarahara izany eo anivon'ny ekipa samihafa taranja.",
+        },
+        {
+          title: "Fiahiana ara-teknolojia",
+          desc: "Mikaroka fitaovana vaovao hatrany aho mba hampidirana ireo fomba fiasa tsara indrindra eo amin'ny tsena amin'ny asako.",
+        },
       ],
       languagesTitle: "Fahaizana Teny",
       JeParle: "Teny ampiasaina",
@@ -390,19 +450,22 @@ export const translations = {
     },
     contact: {
       title: "Andao hifandray",
-      subtitle: "Manana tetikasa lehibe, soso-kevitra fiaraha-miasa, na tolotra asa ianao? Aza misalasala mifandray amiko fa vonona hifampiresaka aho!",
+      subtitle:
+        "Manana tetikasa lehibe, soso-kevitra fiaraha-miasa, na tolotra asa ianao? Aza misalasala mifandray amiko fa vonona hifampiresaka aho!",
       coordinatesTitle: "Mombamomba ny fifandraisana",
       emailLabel: "Imailaka arak'asa",
       locationLabel: "Toerana",
       locationValue: "Antananarivo, Madagasikara",
       namePlaceholder: "Ny anaranao feno",
       emailPlaceholder: "Ny adiresy imailakao",
-      messagePlaceholder: "Hazavao amin'ny fohifohy ny tetikasanao na ny fanontanianao...",
+      messagePlaceholder:
+        "Hazavao amin'ny fohifohy ny tetikasanao na ny fanontanianao...",
       sendBtn: "Alefaso ny hafatra",
     },
     projects: {
       title: "Tetikasa farany",
-      subtitle: "Indreto misy santionany amin'ireo asa vitako arak'asa sy akademika, maneho ny fahaizako ara-teknika.",
+      subtitle:
+        "Indreto misy santionany amin'ireo asa vitako arak'asa sy akademika, maneho ny fahaizako ara-teknika.",
       labels: {
         front: "Frontend",
         back: "Backend",
@@ -413,25 +476,30 @@ export const translations = {
       items: [
         {
           title: "Fampiharana Fisoratana Anarana",
-          pitch: "Famolavolana sy fampandrosoana fampiharana web ho an'ny MTEFoP miaraka amin'ny mpanampy IA amin'ny alalan'ny API Gemini.",
+          pitch:
+            "Famolavolana sy fampandrosoana fampiharana web ho an'ny MTEFoP miaraka amin'ny mpanampy IA amin'ny alalan'ny API Gemini.",
         },
         {
           title: "Fitantanana Bulletin de Note",
-          pitch: "Tetikasa akademika amin'ny fametrahana rafitra fitantanana naoty an-sekoly ho an'ny mpianatra.",
+          pitch:
+            "Tetikasa akademika amin'ny fametrahana rafitra fitantanana naoty an-sekoly ho an'ny mpianatra.",
         },
         {
           title: "Fampifanarahana ny Module Odoo",
-          pitch: "Fanitsiana araka ny ilaina ny module Mpiasa ao amin'ny Odoo nandritra ny lalam-piofanako.",
+          pitch:
+            "Fanitsiana araka ny ilaina ny module Mpiasa ao amin'ny Odoo nandritra ny lalam-piofanako.",
         },
         {
           title: "Fitantanana Rendéz-vous Ara-pahasalamana",
-          pitch: "Famolavolana sy fampandrosoana fampiharana web sy finday ho an'ny fitantanana ny rendez-vous ara-pahasalamana.",
+          pitch:
+            "Famolavolana sy fampandrosoana fampiharana web sy finday ho an'ny fitantanana ny rendez-vous ara-pahasalamana.",
         },
       ],
     },
     techStack: {
       title: "Fitaovana & Teknolojia",
-      subtitle: "Ireo teknolojia, fiteny ary fitaovana ampiasako isan'andro mba hananganana vahaolana azo antoka.",
+      subtitle:
+        "Ireo teknolojia, fiteny ary fitaovana ampiasako isan'andro mba hananganana vahaolana azo antoka.",
       categories: [
         { title: "Front-End" },
         { title: "Back-End" },
@@ -442,7 +510,8 @@ export const translations = {
     },
     academic: {
       title: "Fianarana sy Diplaoma",
-      subtitle: "Ny lalam-piofanako akademika sy ireo fahaizana fototra azoko mandritra izany.",
+      subtitle:
+        "Ny lalam-piofanako akademika sy ireo fahaizana fototra azoko mandritra izany.",
       labels: {
         inProgress: "Am-panatanterahana",
         completed: "Azoko",
@@ -455,8 +524,13 @@ export const translations = {
           location: "Ampasamadinika, Antananarivo",
           period: "Ankehitriny",
           status: "in-progress",
-          description: "Fanohizana ny fianarana ambony amin'ny Informatika, fanatsarana ny injeneria rindrambaiko sy ny arkitektiora rafitra.",
-          skills: ["Arkitektiora rindrambaiko", "Fampandrosoana Web", "Fitantanana tetikasa"],
+          description:
+            "Fanohizana ny fianarana ambony amin'ny Informatika, fanatsarana ny injeneria rindrambaiko sy ny arkitektiora rafitra.",
+          skills: [
+            "Arkitektiora rindrambaiko",
+            "Fampandrosoana Web",
+            "Fitantanana tetikasa",
+          ],
         },
         {
           degree: "Licence Professionnelle amin'ny Informatika",
@@ -465,7 +539,12 @@ export const translations = {
           period: "2023 - 2026",
           status: "completed",
           description: "Azoko miaraka amin'ny fizohana tsara indrindra.",
-          skills: ["Arkitektiora rindrambaiko", "Fampandrosoana Web", "Fitantanana tetikasa", "Famolavolana"],
+          skills: [
+            "Arkitektiora rindrambaiko",
+            "Fampandrosoana Web",
+            "Fitantanana tetikasa",
+            "Famolavolana",
+          ],
         },
         {
           degree: "Baccalauréat Série D",
@@ -479,11 +558,13 @@ export const translations = {
       ],
     },
     footer: {
-      description: "Mpamolavola Full Stack manana fientanam-po amin'ny famoronana sehatra nomerika maoderina, haingana ary mora ampiasaina.",
+      description:
+        "Mpamolavola Full Stack manana fientanam-po amin'ny famoronana sehatra nomerika maoderina, haingana ary mora ampiasaina.",
       available: "Azo raisina ho an'ny fahafahana vaovao",
       navTitle: "Fizahavana haingana",
       connectTitle: "Andao hifandray hatrany",
-      connectText: "Mitady hanatanteraka tetikasa na hanamafy ny ekipanao ianao? Aza misalasala manoratra amiko.",
+      connectText:
+        "Mitady hanatanteraka tetikasa na hanamafy ny ekipanao ianao? Aza misalasala manoratra amiko.",
       rights: "Zo rehetra voaaro.",
       builtWith: "Natao tamin'ny",
       nav: {
